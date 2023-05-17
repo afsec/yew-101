@@ -1,3 +1,5 @@
+use std::ops::{AddAssign, SubAssign};
+
 use super::{model::Model, msg::Msg};
 use crate::App;
 use gloo_console::log as console_log;
@@ -9,11 +11,11 @@ impl Update {
     pub fn go(model: &mut Model, _ctx: &Context<App>, msg: crate::app::Msg) -> bool {
         match msg {
             Msg::Increment => {
-                model.counter += 1;
+                model.counter.add_assign(1);
                 console_log!("plus one"); // Will output a string to the browser console
             }
             Msg::Decrement => {
-                model.counter -= 1;
+                model.counter.sub_assign(1);
                 console_log!("minus one");
             }
         };

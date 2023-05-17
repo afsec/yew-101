@@ -3,11 +3,11 @@ mod msg;
 pub mod update;
 pub mod view;
 
-use self::model::Model;
-use self::msg::Msg;
 use self::update::Update;
+use self::{model::Model, view::View};
+use msg::Msg;
 
-use yew::{html, Component, Context, Html};
+use yew::{Component, Context, Html};
 
 pub struct App(Model);
 
@@ -18,7 +18,7 @@ impl Component for App {
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self(Model { counter: 0 })
+        Self(Model::init())
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
@@ -27,12 +27,7 @@ impl Component for App {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        html! {
-            <div>
-                <button onclick={ctx.link().callback(|_| Msg::Increment)}> {"+1"} </button>
-                <p>{ self.0.counter }</p>
-                <button onclick={ctx.link().callback(|_| Msg::Decrement)}> {"-1"} </button>
-            </div>
-        }
+        let model = &self.0;
+        View::go(model, ctx)
     }
 }
