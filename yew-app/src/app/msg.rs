@@ -1,5 +1,8 @@
+use super::model::Page;
+
 pub enum Msg {
     // NoOp,
     Increment,
-    Decrement
+    Decrement,
+    ShowPage(Page),
 }

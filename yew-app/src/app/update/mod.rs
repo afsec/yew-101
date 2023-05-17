@@ -12,11 +12,14 @@ impl Update {
         match msg {
             Msg::Increment => {
                 model.counter.add_assign(1);
-                console_log!("plus one"); // Will output a string to the browser console
+                console_log!("plus one");
             }
             Msg::Decrement => {
                 model.counter.sub_assign(1);
                 console_log!("minus one");
+            }
+            Msg::ShowPage(page) => {
+                model.page = page;
             }
         };
         true
