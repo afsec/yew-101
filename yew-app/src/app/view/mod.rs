@@ -17,7 +17,7 @@ impl View {
         #[cfg(debug_assertions)]
         console_log("");
         html! {
-            <div id={"main"}>
+            <div class="flex flex-col">
                 { Menu::view(model, ctx.link()) }
                 { Content::view(model, ctx.link()) }
             </div>
