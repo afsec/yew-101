@@ -3,14 +3,11 @@ mod msg;
 pub mod update;
 pub mod view;
 
-use self::update::Update;
-use self::{model::Model, view::View};
-use msg::Msg;
+use self::{model::Model, msg::Msg, update::Update, view::View};
 
-use gloo_console::log as console_log;
 use yew::{Component, Context, Html};
 
-#[derive(Debug, Default, Clone, PartialEq)]
+#[derive(Debug, Default)]
 pub struct App(Model);
 
 impl Component for App {

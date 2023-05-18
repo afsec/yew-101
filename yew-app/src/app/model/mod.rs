@@ -1,12 +1,10 @@
-use yew::Properties;
-
-#[derive(Debug, Default, Clone, Properties, PartialEq)]
+#[derive(Debug, Default)]
 pub struct Model {
     pub counter: i32,
     pub page: Page,
 }
 
-#[derive(Debug, Default, Clone, PartialEq)]
+#[derive(Debug, Default, PartialEq)]
 pub enum Page {
     #[default]
     Home,
