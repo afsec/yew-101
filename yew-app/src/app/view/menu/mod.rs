@@ -12,9 +12,21 @@ impl Menu {
         html! {
             <div id={"menu"}>
                 <ul>
-                    <li><a href={"#"} onclick={link.callback(|_| Msg::ShowPage(Page::Home))}>{"Home"}</a></li>{"   "}
-                    <li><a href={"#"} onclick={link.callback(|_| Msg::ShowPage(Page::Posts))}>{"Posts"}</a></li>{"   "}
-                    <li><a href={"#"} onclick={link.callback(|_| Msg::ShowPage(Page::Settings))}>{"Settings"}</a></li>
+                    <li>
+                        <a
+                            class={ if model.page == Page::Home {"active"} else {""}}
+                            href={"#"} onclick={link.callback(|_| Msg::ShowPage(Page::Home))}>{"Home"}</a>
+                    </li>{"   "}
+                    <li>
+                        <a
+                            class={ if model.page == Page::Posts {"active"} else {""}}
+                            href={"#"} onclick={link.callback(|_| Msg::ShowPage(Page::Posts))}>{"Posts"}</a>
+                    </li>{"   "}
+                    <li>
+                        <a
+                            class={ if model.page == Page::Settings {"active"} else {""}}
+                            href={"#"} onclick={link.callback(|_| Msg::ShowPage(Page::Settings))}>{"Settings"}</a>
+                    </li>
                 </ul>
             </div>
         }
