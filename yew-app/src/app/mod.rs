@@ -30,7 +30,6 @@ impl Component for App {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         let model = &self.0;
-        console_log!(format!("{model:?}"));
         View::go(model, ctx)
     }
 }

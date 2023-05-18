@@ -1,10 +1,9 @@
 mod pages;
 
-use yew::{html, html::Scope, Html};
+use yew::{html::Scope, Html};
 
 use crate::app::{
     model::{Model, Page},
-    msg::Msg,
     App,
 };
 
