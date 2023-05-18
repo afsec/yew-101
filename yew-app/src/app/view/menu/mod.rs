@@ -1,9 +1,10 @@
-use crate::app::model::Model;
-use crate::app::model::Page;
-use crate::app::{msg::Msg, App};
 use yew::{html, html::Scope, Html};
 
-///////////
+use crate::app::{
+    model::{Model, Page},
+    msg::Msg,
+    App,
+};
 
 pub struct Menu;
 
@@ -32,5 +33,3 @@ impl Menu {
         }
     }
 }
-
-///////////
