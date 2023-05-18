@@ -12,6 +12,7 @@ pub struct View;
 impl View {
     pub fn go(model: &Model, ctx: &Context<App>) -> Html {
         console_log!(format!("View: {model:?}"));
+        console_log!("");
         html! {
             <div id={"main"}>
                 { Menu::view(model, ctx.link()) }
