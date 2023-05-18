@@ -21,6 +21,10 @@ WORKDIR /usr/local/bin
 # Install Dev Tooling
 RUN curl --fail https://raw.githubusercontent.com/afsec/devcontainer-rust/main/install_tooling.sh -sSf | sh
 
+RUN curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
+RUN mv tailwindcss-linux-x64 tailwindcss
+RUN chmod +x tailwindcss
+
 ENV RUSTUP_HOME=/opt/rustup
 ENV CARGO_HOME=/opt/cargo
 

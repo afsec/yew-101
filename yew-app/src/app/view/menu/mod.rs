@@ -11,7 +11,7 @@ pub struct Menu;
 impl Menu {
     pub fn view(model: &Model, link: &Scope<App>) -> Html {
         html! {
-            <div id={"menu"}>
+            <div>
                 <ul>
                     <li>
                         <a

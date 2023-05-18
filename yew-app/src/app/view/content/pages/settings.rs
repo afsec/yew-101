@@ -6,7 +6,7 @@ pub fn render(model: &Model, link: &Scope<App>) -> Html {
     html! {
         <div>
         <h1>{"Settings"}</h1>
-        <div id={"content"}>
+        <div>
             <div id={"counter"}>
                 <button onclick={link.callback(|_| Msg::Increment)}> {"+1"} </button>
                 <p>{ model.counter }</p>
