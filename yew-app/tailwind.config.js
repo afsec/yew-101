@@ -5,7 +5,10 @@ module.exports = {
     "./index.html"
   ],
   daisyui: {
-    themes: ["coffee"],
+    themes: [
+      "light",
+      "dark"
+    ],
   },
   theme: {
     extend: {},
