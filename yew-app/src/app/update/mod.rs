@@ -9,6 +9,7 @@ pub struct Update;
 
 impl Update {
     pub fn go(model: &mut Model, _ctx: &Context<App>, msg: crate::app::Msg) -> bool {
+        #[cfg(debug_assertions)]
         console_log(format!("Update: Msg::{msg:?}"));
         match msg {
             Msg::Increment => model.counter.add_assign(1),

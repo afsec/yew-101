@@ -12,7 +12,9 @@ pub struct View;
 
 impl View {
     pub fn go(model: &Model, ctx: &Context<App>) -> Html {
+        #[cfg(debug_assertions)]
         console_log(format!("View: {model:?}"));
+        #[cfg(debug_assertions)]
         console_log("");
         html! {
             <div id={"main"}>
